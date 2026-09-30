@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="doc-title">Iragi Mihigo Roland — Spécialiste en Gestion de l'Information, SIG, Analyse des Données & MEAL</title>
+  <meta name="description" id="doc-desc" content="Expert en gestion de l'information (IM), analyse géospatiale (SIG) et suivi-évaluation (MEAL). Maîtrise complète du cycle de vie de la donnée : KoboToolbox/XLSForm, Power BI, SQL/BigQuery et QGIS en contextes humanitaires et de gouvernance.">
+  <meta property="og:title" content="Iragi Mihigo Roland — Spécialiste en Gestion de l'Information, SIG, Analyse des Données & MEAL">
+  <meta property="og:description" content="Expert en gestion de l'information (IM), analyse géospatiale (SIG) et suivi-évaluation (MEAL). Maîtrise complète du cycle de vie de la donnée : KoboToolbox/XLSForm, Power BI, SQL/BigQuery et QGIS en contextes humanitaires et de gouvernance.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --card-border: #1f293d;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --accent-glow: rgba(37, 99, 235, 0.25);
+      --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    
+    header {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(9, 13, 22, 0.9);
+      border-bottom: 1px solid var(--card-border);
+    }
+    .nav-inner {
+      display: flex; justify-content: space-between; align-items: center; height: 70px;
+    }
+    .logo { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.5px; }
+    .logo span { color: #60a5fa; }
+    nav ul { display: flex; list-style: none; gap: 20px; }
+    nav a { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: #fff; }
+    .lang-btn {
+      background: #1f293d; border: 1px solid #374151; color: #fff; padding: 6px 14px;
+      border-radius: 8px; font-weight: 700; cursor: pointer; transition: all 0.2s; font-size: 0.85rem;
+    }
+    .lang-btn:hover { background: var(--accent); border-color: var(--accent); }
+
+    .hero { padding: 80px 0 60px; text-align: center; }
+    .avatar {
+      width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+      border: 3px solid #3b82f6; box-shadow: 0 0 35px rgba(59, 130, 246, 0.35);
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-block; background: rgba(34, 197, 94, 0.15); color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.3); padding: 5px 16px; border-radius: 20px;
+      font-size: 0.85rem; font-weight: 600; margin-bottom: 16px;
+    }
+    h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 8px; }
+    .hero-title { font-size: 1.3rem; color: #93c5fd; font-weight: 600; margin-bottom: 18px; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .hero-bio { max-width: 760px; margin: 0 auto 28px; color: var(--text-muted); font-size: 1.05rem; }
+    .contact-pills { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 30px; font-size: 0.88rem; color: #9ca3af; }
+    .contact-pills span { background: #111827; border: 1px solid #1f293d; padding: 6px 14px; border-radius: 8px; }
+    .btn-group { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      padding: 12px 26px; border-radius: 10px; font-weight: 600; font-size: 0.95rem;
+      cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary { background: #2563eb; color: #fff; border: none; box-shadow: 0 4px 18px rgba(37, 99, 235, 0.3); }
+    .btn-primary:hover { background: #1d4ed8; }
+    .btn-secondary { background: #1f293d; color: #fff; border: 1px solid #374151; }
+    .btn-secondary:hover { background: #283548; }
+
+    section { padding: 70px 0; border-top: 1px solid var(--card-border); }
+    .section-title { font-size: 2.1rem; font-weight: 800; margin-bottom: 8px; }
+    .section-subtitle { color: var(--text-muted); margin-bottom: 36px; font-size: 1rem; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .skill-card {
+      background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px;
+      padding: 18px; transition: transform 0.2s, border-color 0.2s;
+    }
+    .skill-card:hover { transform: translateY(-2px); border-color: #3b82f6; }
+    .skill-head { display: flex; justify-content: space-between; font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; }
+    .bar-bg { background: #1f293d; height: 6px; border-radius: 4px; overflow: hidden; }
+    .bar-fill { background: linear-gradient(90deg, #3b82f6, #06b6d4); height: 100%; border-radius: 4px; }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+    .project-card {
+      background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px;
+      overflow: hidden; display: flex; flex-direction: column;
+    }
+    .project-img { width: 100%; height: 190px; object-fit: cover; }
+    .project-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
+    .project-body h3 { font-size: 1.2rem; margin-bottom: 10px; font-weight: 700; color: #fff; }
+    .project-body p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px; flex: 1; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+    .tag { background: #1f293d; color: #93c5fd; font-size: 0.75rem; padding: 3px 8px; border-radius: 6px; font-family: monospace; }
+    
+    .timeline { border-left: 2px solid var(--card-border); padding-left: 26px; margin-left: 10px; display: flex; flex-direction: column; gap: 28px; }
+    .timeline-item { position: relative; }
+    .timeline-dot {
+      position: absolute; left: -33px; top: 6px; width: 14px; height: 14px;
+      border-radius: 50%; background: #3b82f6; border: 3px solid var(--bg);
+    }
+    .timeline-date { font-size: 0.85rem; font-weight: 700; color: #93c5fd; margin-bottom: 4px; }
+    .timeline-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 2px; }
+    .timeline-place { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; font-weight: 500; }
+    .timeline-desc { color: #d1d5db; font-size: 0.9rem; }
+
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .cert-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px; }
+    .cert-badge { display: inline-block; font-size: 0.75rem; font-weight: 700; color: #60a5fa; background: rgba(30, 58, 138, 0.4); border: 1px solid rgba(59, 130, 246, 0.4); padding: 2px 8px; border-radius: 6px; margin-bottom: 8px; }
+
+    .ref-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .ref-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px; }
+    
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 22px; }
+    .blog-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; }
+    .blog-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: #9ca3af; margin-bottom: 10px; }
+    .blog-card h3 { font-size: 1.15rem; margin-bottom: 8px; font-weight: 700; }
+    .blog-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px; flex: 1; }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px);
+      display: none; align-items: center; justify-content: center; z-index: 1000; padding: 20px;
+    }
+    .modal-box {
+      background: #111827; border: 1px solid #1f293d; border-radius: 16px;
+      max-width: 600px; width: 100%; padding: 28px; position: relative; max-height: 85vh; overflow-y: auto;
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px; background: none; border: none;
+      color: #9ca3af; font-size: 1.5rem; cursor: pointer;
+    }
+    .modal-close:hover { color: #fff; }
+
+    footer { text-align: center; padding: 40px 0; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--card-border); }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      nav ul { display: none; }
+      .container { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-inner">
+      <div class="logo">Iragi Mihigo Roland <span>• MEAL & Data</span></div>
+      <nav>
+        <ul>
+          <li><a href="#about" class="i18n-nav-about">À propos</a></li>
+          <li><a href="#skills" class="i18n-nav-skills">Compétences</a></li>
+          <li><a href="#projects" class="i18n-nav-projects">Projets</a></li>
+          <li><a href="#experience" class="i18n-nav-experience">Expérience</a></li>
+          <li><a href="#education" class="i18n-nav-education">Formation</a></li>
+          <li><a href="#certifications" class="i18n-nav-certs">Certifications</a></li>
+          <li><a href="#references" class="i18n-nav-refs">Références</a></li>
+          <li><a href="#blog" class="i18n-nav-blog">Blog</a></li>
+          <li><a href="#contact" class="i18n-nav-contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="lang-btn" id="lang-toggle-btn" onclick="toggleLanguage()">EN 🇬🇧</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <img class="avatar" src="data:image/jpeg;base64,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7bRQdfZpc2lnbmF0dXJleBlzZWxmI2p1bWJmPWMycGEuc2lnbmF0dXJlY2FsZ2ZzaGEyNTYAAAJRanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAnGp1bWIAAAAoanVtZGNib3IAEQAQgAAAqgA4m3EDYzJwYS5oYXNoLmRhdGEAAAAAbGNib3KkamV4Y2x1c2lvbnOBomVzdGFydBRmbGVuZ3RoGReKY2FsZ2ZzaGEyNTZkaGFzaFggN+mYVcSLhlFuc4/Lk6Nz3bvEvpbvmljJA2gMDyVCrORjcGFkTgAAAAAAAAAAAAAAAAAAAAABhGp1bWIAAAApanVtZGNib3IAEQAQgAAAqgA4m3EDYzJwYS5hY3Rpb25zLnYyAAAAAVNjYm9yoWdhY3Rpb25zgqNmYWN0aW9ubGMycGEuY3JlYXRlZGtkZXNjcmlwdGlvbnggQ3JlYXRlZCBieSBHb29nbGUgR2VuZXJhdGl2ZSBBSS5xZGlnaXRhbFNvdXJjZVR5cGV4Rmh0dHA6Ly9jdi5pcHRjLm9yZy9uZXdzY29kZXMvZGlnaXRhbHNvdXJjZXR5cGUvdHJhaW5lZEFsZ29yaXRobWljTWVkaWGjZmFjdGlvbmtjMnBhLmVkaXRlZGtkZXNjcmlwdGlvbngoQXBwbGllZCBpbXBlcmNlcHRpYmxlIFN5bnRoSUQgd2F0ZXJtYXJrLnFkaWdpdGFsU291cmNlVHlwZXhGaHR0cDovL2N2LmlwdGMub3JnL25ld3Njb2Rlcy9kaWdpdGFsc291cmNldHlwZS90cmFpbmVkQWxnb3JpdGhtaWNNZWRpYf/bAEMABQMEBAQDBQQEBAUFBQYHDAgHBwcHDwsLCQwRDxISEQ8RERMWHBcTFBoVEREYIRgaHR0fHx8TFyIkIh4kHB4fHv/bAEMBBQUFBwYHDggIDh4UERQeHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHv/AABEIAZABkAMBIgACEQEDEQH/xAAdAAACAwEBAQEBAAAAAAAAAAAGBwMEBQgCAQAJ/8QARxAAAQMDAwMCBAIIBAUDAwMFAQIDBAAFEQYSIQcxQRNRFCJhcTKBCBUjQpGhscEWUtHhJDNicvBDsvEXJqIl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" alt="Iragi Mihigo Roland" />
+        <br>
+        <span class="badge" id="hero-badge">● Disponible pour Missions Data Analyst & MEAL</span>
+        <h1>Iragi Mihigo Roland</h1>
+        <div class="hero-title" id="hero-title">Spécialiste en Gestion de l'Information, SIG, Analyse des Données & MEAL</div>
+        <p class="hero-bio" id="hero-bio">Expert en gestion de l'information (IM), analyse géospatiale (SIG) et suivi-évaluation (MEAL). Maîtrise complète du cycle de vie de la donnée : KoboToolbox/XLSForm, Power BI, SQL/BigQuery et QGIS en contextes humanitaires et de gouvernance.</p>
+        
+        <div class="contact-pills">
+          <span>📍 Katindo, Avenue de la Frontière, Goma, Nord-Kivu, RDC</span>
+          <span>📞 +243 992 641 674</span>
+          <span>✉️ <span id="hero-email">rolandiragimihigo851@gmail.com</span></span>
+        </div>
+
+        <div class="btn-group">
+          <a href="#contact" class="btn btn-primary" id="btn-contact">Me Contacter</a>
+          <a href="#projects" class="btn btn-secondary" id="btn-projects">Voir les Projets</a>
+          <button onclick="copyEmail()" class="btn btn-secondary" id="btn-copy-email">📋 Copier Email</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title" id="about-heading">Profil Professionnel</h2>
+        <p class="section-subtitle" id="about-subheading">Expertise en gestion de l'information, SIG et suivi-évaluation en RDC</p>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 28px; font-size: 1.05rem; line-height: 1.8;">
+          <p id="about-text">Expert en gestion de l'information (IM), analyse géospatiale (SIG) et modélisation de données, avec une expérience terrain confirmée dans le déploiement de solutions numériques en contextes de gouvernance, de santé publique et d'interventions humanitaires en RDC. Maîtrise complète du cycle de vie de la donnée : collecte mobile sécurisée (KoboToolbox/XLSForm), structuration et automatisation de bases de données (MySQL, BigQuery), analyses spatiales multicritères (QGIS) et conception de tableaux de bord décisionnels interactifs (Power BI, Tableau, Excel Avancé). Rompu à la coordination avec les partenaires internationaux (LM International, clusters humanitaires, divisions provinciales), à l'appui technique des équipes opérationnelles de terrain et à la gouvernance de la qualité, garantissant l'intégrité, la confidentialité et l'exploitation stratégique des données pour la prise de décision fondée sur les preuves (Evidence-Based Decision Making).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title" id="skills-heading">Compétences Techniques & MEAL</h2>
+        <p class="section-subtitle" id="skills-subheading">KoboToolbox, Power BI, QGIS, SQL/BigQuery, analyses sanitaires et humanitaires</p>
+        <div class="skills-grid" id="skills-container">
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Cycle de Vie de la Donnée (Collecte, Nettoyage, Analyse)</span>
+                <span style="color: #60a5fa">98%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 98%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Indicateurs MEAL, Cadres Logiques & KPIs de Suivi</span>
+                <span style="color: #60a5fa">95%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 95%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Bulletins de Situation (SitReps) & Data Storytelling</span>
+                <span style="color: #60a5fa">92%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 92%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Prise de Décision Fondée sur les Preuves (Evidence-Based)</span>
+                <span style="color: #60a5fa">94%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 94%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Gestion Axée sur les Résultats (GAR) & Redevabilité (AAP)</span>
+                <span style="color: #60a5fa">90%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 90%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>QGIS Expert (Numérisation, Géocodage, Géoréférencement)</span>
+                <span style="color: #60a5fa">95%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 95%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Analyses Spatiales Multicritères & Cartes de Densité</span>
+                <span style="color: #60a5fa">92%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 92%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Croisement de Données Spatiales, Fiscales & Démographiques</span>
+                <span style="color: #60a5fa">90%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 90%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Normes & Standards Cartographiques Communicants</span>
+                <span style="color: #60a5fa">88%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 88%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>KoboToolbox & KoboCollect Avancé</span>
+                <span style="color: #60a5fa">96%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 96%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Conception Formulaires XLSForm (Logique & Calculs)</span>
+                <span style="color: #60a5fa">95%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 95%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Supervision Terrain, Assurance Qualité & Nettoyage Live</span>
+                <span style="color: #60a5fa">92%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 92%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Formation & Encadrement Méthodologique des Enquêteurs</span>
+                <span style="color: #60a5fa">94%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 94%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Microsoft Power BI (DAX, Power Query ETL, Dataviz)</span>
+                <span style="color: #60a5fa">94%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 94%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Tableau Public & Desktop (Tableaux de bord interactifs)</span>
+                <span style="color: #60a5fa">90%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 90%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Excel Avancé (Formules Matricielles, XLOOKUP, TCD)</span>
+                <span style="color: #60a5fa">95%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 95%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Qlik Sense (Dashboards associatifs & suivi provincial)</span>
+                <span style="color: #60a5fa">85%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 85%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>SQL Avancé & Google BigQuery</span>
+                <span style="color: #60a5fa">90%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 90%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>MySQL & Microsoft Access</span>
+                <span style="color: #60a5fa">88%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 88%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Pipelines d’Intégration ETL & Audits d’Intégrité</span>
+                <span style="color: #60a5fa">86%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 86%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Développement Web (HTML5, CSS3, JavaScript)</span>
+                <span style="color: #60a5fa">84%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 84%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Systèmes d’Information Sanitaire (CPN, Vaccination, Épidémio)</span>
+                <span style="color: #60a5fa">92%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 92%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Protection des Données Sensibles & Éthique (VBG, Protection)</span>
+                <span style="color: #60a5fa">94%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 94%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Coordination Clusters Humanitaires & ONG (LM International)</span>
+                <span style="color: #60a5fa">90%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 90%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Français (Langue Maternelle)</span>
+                <span style="color: #60a5fa">100%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 100%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Swahili (Langue Véhiculaire / Bilingue)</span>
+                <span style="color: #60a5fa">100%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 100%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Lingala (Courant)</span>
+                <span style="color: #60a5fa">90%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 90%"></div>
+              </div>
+            </div>
+          
+            <div class="skill-card">
+              <div class="skill-head">
+                <span>Anglais (Professionnel Courant - C1)</span>
+                <span style="color: #60a5fa">88%</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: 88%"></div>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title" id="projects-heading">Projets Data & Portfolio Analytique</h2>
+        <p class="section-subtitle" id="projects-subheading">Études de cas concrètes, systèmes MEAL et cartographies géospatiales</p>
+        <div class="projects-grid" id="projects-container">
+          
+            <div class="project-card">
+              <img class="project-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Analyse des Comportements Usagers : Projet Cyclistic (Google Data Analytics)" />
+              <div class="project-body">
+                <h3>Analyse des Comportements Usagers : Projet Cyclistic (Google Data Analytics)</h3>
+                <p>Étude de cas analytique complète sur BigQuery, SQL et Tableau pour concevoir une stratégie marketing de conversion des usagers occasionnels en membres annuels.</p>
+                <div class="tags">
+                  <span class="tag">Google BigQuery</span><span class="tag">SQL Avancé</span><span class="tag">Tableau Public</span><span class="tag">Kaggle</span><span class="tag">Data Storytelling</span>
+                </div>
+                <div style="font-size: 0.8rem; color: #4ade80; margin-bottom: 12px;">📈 Plus de 5 millions de trajets analysés avec requêtage BigQuery optimisé</div>
+                <div style="display: flex; gap: 10px; margin-top: auto;">
+                  <a href="https://kaggle.com/rolandiragi" target="_blank" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.8rem;">Kaggle</a>
+                  <a href="https://github.com/RolandMihigo" target="_blank" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.8rem;">GitHub</a>
+                  <a href="https://public.tableau.com" target="_blank" class="btn btn-primary" style="padding: 6px 12px; font-size: 0.8rem;">Accéder</a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="project-card">
+              <img class="project-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Système Numérique MEAL & Santé Publique en RDC (eGov Africa & LM International)" />
+              <div class="project-body">
+                <h3>Système Numérique MEAL & Santé Publique en RDC (eGov Africa & LM International)</h3>
+                <p>Architecture de gestion de l'information humanitaire et suivi-évaluation pour la santé publique : CPN, couverture vaccinale et monitoring des VBG.</p>
+                <div class="tags">
+                  <span class="tag">KoboToolbox</span><span class="tag">XLSForm</span><span class="tag">Power BI</span><span class="tag">MEAL</span><span class="tag">Santé Publique</span><span class="tag">Protection VBG</span>
+                </div>
+                <div style="font-size: 0.8rem; color: #4ade80; margin-bottom: 12px;">📈 Couverture opérationnelle multi-zones de santé et suivi en temps réel des indicateurs clés</div>
+                <div style="display: flex; gap: 10px; margin-top: auto;">
+                  
+                  <a href="https://github.com/RolandMihigo" target="_blank" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.8rem;">GitHub</a>
+                  <a href="https://egov-africa.org" target="_blank" class="btn btn-primary" style="padding: 6px 12px; font-size: 0.8rem;">Accéder</a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="project-card">
+              <img class="project-img" src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80" alt="Système d'Information Géographique (SIG) & Dématérialisation Fiscale (Verditra SARLU)" />
+              <div class="project-body">
+                <h3>Système d'Information Géographique (SIG) & Dématérialisation Fiscale (Verditra SARLU)</h3>
+                <p>Vectorisation, géoréférencement et calcul spatial sous QGIS de plus de 10 000 parcelles couplés aux identifiants fiscaux des régies provinciales (DGRNK, DGRPI).</p>
+                <div class="tags">
+                  <span class="tag">QGIS</span><span class="tag">SIG & Cartographie</span><span class="tag">Géoréférencement</span><span class="tag">MySQL</span><span class="tag">Gouvernance Publique</span>
+                </div>
+                <div style="font-size: 0.8rem; color: #4ade80; margin-bottom: 12px;">📈 Plus de 10 000 parcelles numérisées et rattachées au cadastre fiscal</div>
+                <div style="display: flex; gap: 10px; margin-top: auto;">
+                  
+                  <a href="https://github.com/RolandMihigo" target="_blank" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.8rem;">GitHub</a>
+                  <a href="https://verditra.com" target="_blank" class="btn btn-primary" style="padding: 6px 12px; font-size: 0.8rem;">Accéder</a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="project-card">
+              <img class="project-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Tableaux de Bord Décisionnels des Recettes Publiques (Power BI, Tableau, Qlik Sense)" />
+              <div class="project-body">
+                <h3>Tableaux de Bord Décisionnels des Recettes Publiques (Power BI, Tableau, Qlik Sense)</h3>
+                <p>Plateforme décisionnelle interactive pour le suivi des recettes publiques provinciales avec modélisation relationnelle DAX et analyses comparatives.</p>
+                <div class="tags">
+                  <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query ETL</span><span class="tag">Qlik Sense</span><span class="tag">Excel Avancé</span>
+                </div>
+                <div style="font-size: 0.8rem; color: #4ade80; margin-bottom: 12px;">📈 Suivi dynamique de plus de 100 agents collecteurs et millions de dollars de recettes</div>
+                <div style="display: flex; gap: 10px; margin-top: auto;">
+                  
+                  <a href="https://github.com/RolandMihigo" target="_blank" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.8rem;">GitHub</a>
+                  <a href="https://example.com/bi-dashboard" target="_blank" class="btn btn-primary" style="padding: 6px 12px; font-size: 0.8rem;">Accéder</a>
+                </div>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title" id="exp-heading">Expérience Professionnelle</h2>
+        <p class="section-subtitle" id="exp-subheading">eGov Africa, Verditra SARLU, Radio Maria Bukavu</p>
+        <div class="timeline" id="exp-container">
+          
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2024 — Présent</div>
+              <div class="timeline-title">Co-fondateur & Spécialiste des Données Humanitaires & MEAL</div>
+              <div class="timeline-place">eGov Africa (Organisation Non Gouvernementale) — Goma, RDC</div>
+              <div class="timeline-desc">Architecture et déploiement de solutions numériques de gestion de l'information pour le secteur de la santé publique et les acteurs d'urgence en RDC, avec l'appui de partenaires internationaux tels que LM International.</div>
+            </div>
+          
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">Février 2022 — Janvier 2025</div>
+              <div class="timeline-title">Assistant aux Opérations / ICT & GIS Officer</div>
+              <div class="timeline-place">Verditra SARLU (Société de Services Numériques & Ingénierie) — Ituri, Sud-Kivu, Kongo Central, RDC</div>
+              <div class="timeline-desc">Coordination technique du déploiement de solutions de gouvernance électronique et de dématérialisation fiscale pour les régies provinciales (DGRNK, DGRPI, etc.).</div>
+            </div>
+          
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2021 — 2022</div>
+              <div class="timeline-title">Technicien d'Antenne & Support Systèmes</div>
+              <div class="timeline-place">Radio Maria Bukavu (Réseau International de Radiodiffusion) — Bukavu, Sud-Kivu, RDC</div>
+              <div class="timeline-desc">Supervision technique des faisceaux hertziens d’émission et garantie de la continuité opérationnelle du signal de radiodiffusion.</div>
+            </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title" id="edu-heading">Formation Académique</h2>
+        <p class="section-subtitle" id="edu-subheading">Diplôme universitaire en informatique</p>
+        <div class="timeline" id="edu-container">
+          
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2021</div>
+              <div class="timeline-title">Licence en Informatique (Bachelor of Science in Computer Science)</div>
+              <div class="timeline-place">International University of East Africa (IUEA) — Kampala, Ouganda</div>
+              <div class="timeline-desc">Formation universitaire approfondie en sciences informatiques : modélisation de bases de données, structures de données et algorithmes, réseaux informatiques, développement logiciel et analyse de systèmes.</div>
+            </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="container">
+        <h2 class="section-title" id="certs-heading">Certifications Professionnelles (7)</h2>
+        <p class="section-subtitle" id="certs-subheading">Google, Microsoft, Coursera, Udemy & formations certifiantes</p>
+        <div class="cert-grid" id="certs-container">
+          
+            <div class="cert-card">
+              <span class="cert-badge">Google Certified Data Analyst</span>
+              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 6px;">Google Data Analytics — Certificat Professionnel Analyse de Données</h4>
+              <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 8px;">Google / Coursera • 2023</div>
+              <a href="https://coursera.org" target="_blank" style="color: #60a5fa; font-size: 0.75rem; font-weight: 600;">↗ Vérifier</a>
+            </div>
+          
+            <div class="cert-card">
+              <span class="cert-badge">Power BI Analyst</span>
+              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 6px;">Microsoft Power BI Data Analyst — Modélisation, Mesures DAX & Business Intelligence (PL-300)</h4>
+              <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 8px;">Microsoft / Coursera • 2023</div>
+              <a href="https://coursera.org" target="_blank" style="color: #60a5fa; font-size: 0.75rem; font-weight: 600;">↗ Vérifier</a>
+            </div>
+          
+            <div class="cert-card">
+              <span class="cert-badge">GIS Specialist</span>
+              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 6px;">Map Fast with QGIS — Système d’Information Géographique (SIG)</h4>
+              <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 8px;">Coursera Project Network • 2023</div>
+              <a href="https://coursera.org" target="_blank" style="color: #60a5fa; font-size: 0.75rem; font-weight: 600;">↗ Vérifier</a>
+            </div>
+          
+            <div class="cert-card">
+              <span class="cert-badge">KoboToolbox Expert</span>
+              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 6px;">Complete KoboToolbox Training Course — Collecte Mobile Avancée, XLSForm & Enquêtes Terrain</h4>
+              <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 8px;">Udemy • 2023</div>
+              <a href="https://udemy.com" target="_blank" style="color: #60a5fa; font-size: 0.75rem; font-weight: 600;">↗ Vérifier</a>
+            </div>
+          
+            <div class="cert-card">
+              <span class="cert-badge">Google AI Specialist</span>
+              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 6px;">Google AI — Spécialisation Intelligence Artificielle & Prompting</h4>
+              <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 8px;">Google / Coursera • 2024</div>
+              <a href="https://coursera.org" target="_blank" style="color: #60a5fa; font-size: 0.75rem; font-weight: 600;">↗ Vérifier</a>
+            </div>
+          
+            <div class="cert-card">
+              <span class="cert-badge">Formation Certifiante sur Site (Goma)</span>
+              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 6px;">Excel Avancé pour l'Analyse des Données — Modélisation, TCD & Fonctions Complexes</h4>
+              <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 8px;">Horizon Services Consulting, Goma (RDC) • 2022</div>
+              
+            </div>
+          
+            <div class="cert-card">
+              <span class="cert-badge">Web Design Developer</span>
+              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 6px;">Responsive Web Design — Développement Web, Architecture & Interfaces Réactives</h4>
+              <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 8px;">freeCodeCamp • 2022</div>
+              <a href="https://freecodecamp.org" target="_blank" style="color: #60a5fa; font-size: 0.75rem; font-weight: 600;">↗ Vérifier</a>
+            </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="references">
+      <div class="container">
+        <h2 class="section-title" id="refs-heading">Références Professionnelles</h2>
+        <p class="section-subtitle" id="refs-subheading">Directeurs et coordinateurs (LM International, Verditra, eGov Africa)</p>
+        <div class="ref-grid" id="refs-container">
+          
+            <div class="ref-card">
+              <h4 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px;">Kitoko Bruno</h4>
+              <div style="color: #60a5fa; font-size: 0.85rem; font-weight: 600; margin-bottom: 2px;">Directeur Pays</div>
+              <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 10px;">LM International</div>
+              <div style="font-size: 0.8rem; color: #d1d5db;">✉️ <a href="mailto:kitoko.bruno@lminternational.org">kitoko.bruno@lminternational.org</a></div>
+              <div style="font-size: 0.8rem; color: #d1d5db;">📞 <a href="tel:+243 995 462 548">+243 995 462 548</a></div>
+            </div>
+          
+            <div class="ref-card">
+              <h4 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px;">Joseph Baderha Kahunga</h4>
+              <div style="color: #60a5fa; font-size: 0.85rem; font-weight: 600; margin-bottom: 2px;">Branch Manager Sud-Kivu</div>
+              <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 10px;">Verditra SARLU</div>
+              <div style="font-size: 0.8rem; color: #d1d5db;">✉️ <a href="mailto:joseph@egov-africa.org">joseph@egov-africa.org</a></div>
+              <div style="font-size: 0.8rem; color: #d1d5db;">📞 <a href="tel:+243 995 462 548">+243 995 462 548</a></div>
+            </div>
+          
+            <div class="ref-card">
+              <h4 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px;">Chimène Fatuma wa Saidi</h4>
+              <div style="color: #60a5fa; font-size: 0.85rem; font-weight: 600; margin-bottom: 2px;">Directrice des Opérations</div>
+              <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 10px;">Verditra SARLU</div>
+              <div style="font-size: 0.8rem; color: #d1d5db;">✉️ <a href="mailto:chimene@egov-africa.org">chimene@egov-africa.org</a></div>
+              <div style="font-size: 0.8rem; color: #d1d5db;">📞 <a href="tel:+243 993 820 585">+243 993 820 585</a></div>
+            </div>
+          
+            <div class="ref-card">
+              <h4 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px;">Jacques Musumba</h4>
+              <div style="color: #60a5fa; font-size: 0.85rem; font-weight: 600; margin-bottom: 2px;">Coordonnateur Général</div>
+              <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 10px;">eGov Africa</div>
+              <div style="font-size: 0.8rem; color: #d1d5db;">✉️ <a href="mailto:jacques@egov-africa.org">jacques@egov-africa.org</a></div>
+              <div style="font-size: 0.8rem; color: #d1d5db;">📞 <a href="tel:+243 992 641 674">+243 992 641 674</a></div>
+            </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="blog">
+      <div class="container">
+        <h2 class="section-title" id="blog-heading">Articles & Publications Techniques</h2>
+        <p class="section-subtitle" id="blog-subheading">MEAL humanitaire, cartographie SIG et Power BI / DAX</p>
+        <div class="blog-grid" id="blog-container">
+          
+            <div class="blog-card">
+              <div class="blog-meta">
+                <span>MEAL & Secteur Humanitaire</span>
+                <span>7 min de lecture</span>
+              </div>
+              <h3>Le Rôle Vital du MEAL et de la Gestion de l'Information dans les Réponses Humanitaires d'Urgence</h3>
+              <p>Comment structurer des mécanismes de redevabilité (AAP), concevoir des indicateurs fiables sur KoboToolbox et piloter la prise de décision humanitaire fondée sur les preuves en RDC.</p>
+            </div>
+          
+            <div class="blog-card">
+              <div class="blog-meta">
+                <span>SIG & Cartographie Géospatiale</span>
+                <span>6 min de lecture</span>
+              </div>
+              <h3>QGIS et Analyse Géospatiale pour la Gouvernance Foncière et la Fiscalité Locale</h3>
+              <p>Retour d'expérience sur la vectorisation et le géoréférencement de plus de 10 000 parcelles sous QGIS pour moderniser les régies financières provinciales (DGRNK, DGRPI).</p>
+            </div>
+          
+            <div class="blog-card">
+              <div class="blog-meta">
+                <span>Business Intelligence & Dataviz</span>
+                <span>5 min de lecture</span>
+              </div>
+              <h3>Data Storytelling avec Power BI et DAX : Transformer des Millions de Lignes en Décisions Stratégiques</h3>
+              <p>Comment structurer des modèles de données relationnels performants, écrire des mesures DAX optimisées et concevoir des infographies qui captivent les décideurs.</p>
+            </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container" style="text-align: center;">
+        <h2 class="section-title" id="contact-heading">Prendre Contact</h2>
+        <p style="color: var(--text-muted); margin-bottom: 24px;" id="contact-subheading">
+          Disponible pour des postes et missions en Analyse de Données, SIG et MEAL en RDC et à l'international.
+        </p>
+        <div style="font-size: 1.3rem; font-weight: 700; color: #93c5fd; margin-bottom: 24px;">
+          ✉️ <a href="mailto:rolandiragimihigo851@gmail.com">rolandiragimihigo851@gmail.com</a><br>
+          📞 <span>+243 992 641 674</span>
+        </div>
+        <div class="btn-group">
+          <a href="mailto:rolandiragimihigo851@gmail.com" class="btn btn-primary" id="btn-send-email">Envoyer un E-mail</a>
+          <button onclick="downloadVCard()" class="btn btn-secondary">📇 vCard (.vcf)</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p id="footer-text">© 2026 Iragi Mihigo Roland. Portfolio Data Analyst, SIG & MEAL autonome en HTML, CSS et JavaScript.</p>
+    </div>
+  </footer>
+
+  <script>
+    const DATA = {"personal":{"name":"Iragi Mihigo Roland","title":{"fr":"Spécialiste en Gestion de l'Information, SIG, Analyse des Données & MEAL","en":"Information Management (IM), GIS, Data Analyst & MEAL Specialist"},"bio":{"fr":"Expert en gestion de l'information (IM), analyse géospatiale (SIG) et suivi-évaluation (MEAL). Maîtrise complète du cycle de vie de la donnée : KoboToolbox/XLSForm, Power BI, SQL/BigQuery et QGIS en contextes humanitaires et de gouvernance.","en":"Expert in Information Management (IM), geospatial analysis (GIS), and MEAL (Monitoring, Evaluation, Accountability and Learning). End-to-end data lifecycle mastery: KoboToolbox/XLSForm, Power BI, SQL/BigQuery, and QGIS in humanitarian and governance settings."},"about":{"fr":"Expert en gestion de l'information (IM), analyse géospatiale (SIG) et modélisation de données, avec une expérience terrain confirmée dans le déploiement de solutions numériques en contextes de gouvernance, de santé publique et d'interventions humanitaires en RDC. Maîtrise complète du cycle de vie de la donnée : collecte mobile sécurisée (KoboToolbox/XLSForm), structuration et automatisation de bases de données (MySQL, BigQuery), analyses spatiales multicritères (QGIS) et conception de tableaux de bord décisionnels interactifs (Power BI, Tableau, Excel Avancé). Rompu à la coordination avec les partenaires internationaux (LM International, clusters humanitaires, divisions provinciales), à l'appui technique des équipes opérationnelles de terrain et à la gouvernance de la qualité, garantissant l'intégrité, la confidentialité et l'exploitation stratégique des données pour la prise de décision fondée sur les preuves (Evidence-Based Decision Making).","en":"Specialist in Information Management (IM), geospatial analysis (GIS), and data modeling with proven field experience implementing digital solutions in governance, public health, and humanitarian response contexts in the DRC. Proven expertise across the entire data lifecycle: secure mobile data collection (KoboToolbox/XLSForm), database architecture (MySQL, BigQuery), multi-criteria spatial analysis (QGIS), and interactive BI dashboards (Power BI, Tableau, Advanced Excel). Experienced in liaising with international partners (LM International, humanitarian clusters, provincial divisions), training field operational teams, and enforcing data quality governance to ensure data integrity, confidentiality, and evidence-based strategic decision-making."},"avatarUrl":"/roland_photo.jpg","contact":{"location":"Katindo, Avenue de la Frontière, Goma, Nord-Kivu, RDC","phone":"+243 992 641 674","email":"rolandiragimihigo851@gmail.com","linkedin":"https://linkedin.com/in/roland-iragi","github":"https://github.com/RolandMihigo","kaggle":"https://kaggle.com/rolandiragi","website":"https://roland-portfolio.dev"},"availableForHire":true,"yearsOfExperience":4,"projectsCompleted":15,"satisfiedClients":12,"hobbies":[{"fr":"Musique Polyphonique (piano, chant choral classique – Handel)","en":"Polyphonic Music (piano, classical choral singing – Handel)"},{"fr":"Football (esprit d’équipe et sens tactique)","en":"Football (team spirit and tactical thinking)"},{"fr":"Course à pied & Jogging (endurance et régularité)","en":"Running & Jogging (endurance and consistency)"}]},"skills":[{"name":"Cycle de Vie de la Donnée (Collecte, Nettoyage, Analyse)","level":98,"category":"meal_analytics"},{"name":"Indicateurs MEAL, Cadres Logiques & KPIs de Suivi","level":95,"category":"meal_analytics"},{"name":"Bulletins de Situation (SitReps) & Data Storytelling","level":92,"category":"meal_analytics"},{"name":"Prise de Décision Fondée sur les Preuves (Evidence-Based)","level":94,"category":"meal_analytics"},{"name":"Gestion Axée sur les Résultats (GAR) & Redevabilité (AAP)","level":90,"category":"meal_analytics"},{"name":"QGIS Expert (Numérisation, Géocodage, Géoréférencement)","level":95,"category":"sig_gis"},{"name":"Analyses Spatiales Multicritères & Cartes de Densité","level":92,"category":"sig_gis"},{"name":"Croisement de Données Spatiales, Fiscales & Démographiques","level":90,"category":"sig_gis"},{"name":"Normes & Standards Cartographiques Communicants","level":88,"category":"sig_gis"},{"name":"KoboToolbox & KoboCollect Avancé","level":96,"category":"kobo_field"},{"name":"Conception Formulaires XLSForm (Logique & Calculs)","level":95,"category":"kobo_field"},{"name":"Supervision Terrain, Assurance Qualité & Nettoyage Live","level":92,"category":"kobo_field"},{"name":"Formation & Encadrement Méthodologique des Enquêteurs","level":94,"category":"kobo_field"},{"name":"Microsoft Power BI (DAX, Power Query ETL, Dataviz)","level":94,"category":"bi_dataviz"},{"name":"Tableau Public & Desktop (Tableaux de bord interactifs)","level":90,"category":"bi_dataviz"},{"name":"Excel Avancé (Formules Matricielles, XLOOKUP, TCD)","level":95,"category":"bi_dataviz"},{"name":"Qlik Sense (Dashboards associatifs & suivi provincial)","level":85,"category":"bi_dataviz"},{"name":"SQL Avancé & Google BigQuery","level":90,"category":"database_sql"},{"name":"MySQL & Microsoft Access","level":88,"category":"database_sql"},{"name":"Pipelines d’Intégration ETL & Audits d’Intégrité","level":86,"category":"database_sql"},{"name":"Développement Web (HTML5, CSS3, JavaScript)","level":84,"category":"database_sql"},{"name":"Systèmes d’Information Sanitaire (CPN, Vaccination, Épidémio)","level":92,"category":"humanitarian_gov"},{"name":"Protection des Données Sensibles & Éthique (VBG, Protection)","level":94,"category":"humanitarian_gov"},{"name":"Coordination Clusters Humanitaires & ONG (LM International)","level":90,"category":"humanitarian_gov"},{"name":"Français (Langue Maternelle)","level":100,"category":"languages"},{"name":"Swahili (Langue Véhiculaire / Bilingue)","level":100,"category":"languages"},{"name":"Lingala (Courant)","level":90,"category":"languages"},{"name":"Anglais (Professionnel Courant - C1)","level":88,"category":"languages"}],"projects":[{"id":"proj-cyclistic","title":{"fr":"Analyse des Comportements Usagers : Projet Cyclistic (Google Data Analytics)","en":"User Behavior Analysis: Cyclistic Project (Google Data Analytics)"},"shortDesc":{"fr":"Étude de cas analytique complète sur BigQuery, SQL et Tableau pour concevoir une stratégie marketing de conversion des usagers occasionnels en membres annuels.","en":"Comprehensive data analytics case study leveraging Google BigQuery SQL and Tableau to formulate conversion marketing strategies from casual riders to annual members."},"fullDesc":{"fr":"Projet d'analyse de données réalisé avec rigueur dans le cadre du Certificat Professionnel Google Data Analytics. Traitement de jeux de données massifs de millions de trajets cyclables : nettoyage et modélisation SQL sur Google BigQuery, analyses des variations temporelles et saisonnières, et élaboration de visualisations interactives sur Tableau Public et Kaggle.","en":"In-depth data analytics project conducted under the Google Data Analytics Professional Certificate. Processed millions of bike trip records with Google BigQuery SQL data cleaning, seasonality trends extraction, and executive visualization dashboards deployed on Tableau Public and Kaggle."},"category":"data_analysis","tags":["Google BigQuery","SQL Avancé","Tableau Public","Kaggle","Data Storytelling"],"image":"https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80","liveUrl":"https://public.tableau.com","githubUrl":"https://github.com/RolandMihigo","kaggleUrl":"https://kaggle.com/rolandiragi","featured":true,"metrics":{"fr":"Plus de 5 millions de trajets analysés avec requêtage BigQuery optimisé","en":"5M+ trip records analyzed with optimized BigQuery queries"},"highlights":{"fr":["Nettoyage rigoureux des anomalies et calculs d'indicateurs temporels clés sous SQL BigQuery","Conception d'un tableau de bord décisionnel interactif sur Tableau Public","Recommandations stratégiques concrètes orientées conversion et ROI pour la direction"],"en":["Rigorous anomaly sanitation and key temporal metrics engineering with BigQuery SQL","Interactive decision dashboard designed and published on Tableau Public","Actionable evidence-based conversion recommendations provided for leadership"]}},{"id":"proj-meal-egov","title":{"fr":"Système Numérique MEAL & Santé Publique en RDC (eGov Africa & LM International)","en":"Digital MEAL & Public Health Data Pipeline (eGov Africa & LM International)"},"shortDesc":{"fr":"Architecture de gestion de l'information humanitaire et suivi-évaluation pour la santé publique : CPN, couverture vaccinale et monitoring des VBG.","en":"Humanitarian Information Management & MEAL pipeline for public health interventions: Antenatal care (ANC), vaccination coverage, and GBV monitoring."},"fullDesc":{"fr":"Déploiement d'un écosystème MEAL complet pour des interventions de santé d'urgence en RDC avec l'appui de partenaires internationaux (LM International). Création de formulaires mobiles complexes XLSForm / KoboToolbox avec contraintes conditionnelles, consolidation automatisée, contrôle qualité continu et tableaux de bord Power BI pour les coordinations provinciales et clusters humanitaires.","en":"Deployment of an end-to-end MEAL ecosystem for emergency public health interventions in the DRC supported by international partners (LM International). Complex XLSForm mobile design on KoboToolbox with skip logic, automated aggregation, live quality validation, and executive Power BI dashboards for provincial health divisions and humanitarian clusters."},"category":"meal","tags":["KoboToolbox","XLSForm","Power BI","MEAL","Santé Publique","Protection VBG"],"image":"https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80","liveUrl":"https://egov-africa.org","githubUrl":"https://github.com/RolandMihigo","featured":true,"metrics":{"fr":"Couverture opérationnelle multi-zones de santé et suivi en temps réel des indicateurs clés","en":"Multi-health-zone operational coverage with real-time key indicator tracking"},"highlights":{"fr":["Création de formulaires XLSForm complexes avec logique de saut et calculs embarqués pour enquêtes médicales","Tableaux de bord Power BI d'alerte précoce pour les acteurs d'urgence","Formation de plus de 100 agents de terrain sur la collecte sécurisée et la protection des données sensibles"],"en":["Engineered complex XLSForms with dynamic skip logic and embedded validation for medical surveys","Built early-warning Power BI dashboards for emergency humanitarian responders","Trained 100+ field surveyors on secure mobile collection and sensitive data protection ethics"]}},{"id":"proj-gis-verditra","title":{"fr":"Système d'Information Géographique (SIG) & Dématérialisation Fiscale (Verditra SARLU)","en":"Geographic Information System (GIS) & Tax Digitalization (Verditra SARLU)"},"shortDesc":{"fr":"Vectorisation, géoréférencement et calcul spatial sous QGIS de plus de 10 000 parcelles couplés aux identifiants fiscaux des régies provinciales (DGRNK, DGRPI).","en":"Vectorization, georeferencing, and spatial analysis of 10,000+ land parcels in QGIS linked to provincial revenue registry IDs (DGRNK, DGRPI)."},"fullDesc":{"fr":"Coordination technique des opérations SIG et ICT pour la modernisation foncière et fiscale dans les provinces de l'Ituri, Sud-Kivu et Kongo Central. Numérisation vectorielle de parcelles et bâtis sous QGIS, calculs de superficies géodésiques, croisement avec les bases relationnelles MySQL et production de cartographies thématiques pour l'aide à la décision des gouvernements provinciaux.","en":"Technical lead for GIS and ICT operations supporting land and tax modernization across Ituri, South Kivu, and Kongo Central provinces. Vector digitization of parcels and buildings in QGIS, geodetic area calculations, joins with MySQL relational databases, and thematic maps for provincial government decision-makers."},"category":"gis","tags":["QGIS","SIG & Cartographie","Géoréférencement","MySQL","Gouvernance Publique"],"image":"https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80","liveUrl":"https://verditra.com","githubUrl":"https://github.com/RolandMihigo","featured":true,"metrics":{"fr":"Plus de 10 000 parcelles numérisées et rattachées au cadastre fiscal","en":"Over 10,000 parcels vectorized and mapped to provincial fiscal registers"},"highlights":{"fr":["Vectorisation haute précision sous QGIS sur orthophotos et images satellites haute résolution","Intégration ETL entre couches vectorielles spatiales et bases de données fiscales MySQL","Production de cartes communicantes aux normes cartographiques pour les gouverneurs et régies"],"en":["High-accuracy vectorization in QGIS from high-resolution orthophotos and satellite imagery","ETL pipeline linking GIS spatial layers with provincial fiscal MySQL registries","Produced publication-ready thematic maps for provincial governors and revenue directors"]}},{"id":"proj-bi-dashboards","title":{"fr":"Tableaux de Bord Décisionnels des Recettes Publiques (Power BI, Tableau, Qlik Sense)","en":"Provincial Revenue & Public Finance BI Dashboards (Power BI, Tableau, Qlik Sense)"},"shortDesc":{"fr":"Plateforme décisionnelle interactive pour le suivi des recettes publiques provinciales avec modélisation relationnelle DAX et analyses comparatives.","en":"Interactive executive BI platform tracking provincial public revenue collections with relational DAX modeling and comparative analytics."},"fullDesc":{"fr":"Conception et maintenance de tableaux de bord financiers pour les régies financières provinciales. Modélisation de données complexes, mesures DAX avancées, intégration ETL de données hétérogènes et automatisation des reportings pour les directeurs provinciaux.","en":"Engineered and maintained executive financial dashboards for provincial revenue authorities. Complex data modeling, advanced DAX measures, heterogeneous data integration, and reporting automation for provincial leadership."},"category":"bi","tags":["Power BI","DAX","Power Query ETL","Qlik Sense","Excel Avancé"],"image":"https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80","liveUrl":"https://example.com/bi-dashboard","githubUrl":"https://github.com/RolandMihigo","featured":false,"metrics":{"fr":"Suivi dynamique de plus de 100 agents collecteurs et millions de dollars de recettes","en":"Live monitoring of 100+ revenue agents and millions of dollars in collections"},"highlights":{"fr":["Modélisation en étoile et mesures DAX optimisées pour calculs d'écarts et prévisions budgétaires","Formation et transfert de compétences auprès de plus de 100 agents et directeurs provinciaux","Réduction drastique des délais de consolidation des rapports financiers de 2 semaines à 1 jour"],"en":["Star schema relational modeling with DAX measures for budget variance analysis and projections","Led capacity building and technology transfer workshops for 100+ provincial agents and directors","Reduced financial consolidation cycles from 2 weeks down to under 24 hours"]}}],"education":[{"id":"edu-iuea","degree":{"fr":"Licence en Informatique (Bachelor of Science in Computer Science)","en":"Bachelor of Science in Computer Science"},"institution":{"fr":"International University of East Africa (IUEA)","en":"International University of East Africa (IUEA)"},"period":"2021","location":{"fr":"Kampala, Ouganda","en":"Kampala, Uganda"},"description":{"fr":"Formation universitaire approfondie en sciences informatiques : modélisation de bases de données, structures de données et algorithmes, réseaux informatiques, développement logiciel et analyse de systèmes.","en":"Rigorous computer science curriculum: database architecture, data structures & algorithms, computer networking, software development, and systems analysis."},"honors":{"fr":"Diplômé avec Succès — Spécialisation Données & Systèmes","en":"Graduated — Data & Systems Specialization"}}],"certifications":[{"id":"cert-google-data","name":{"fr":"Google Data Analytics — Certificat Professionnel Analyse de Données","en":"Google Data Analytics Professional Certificate"},"issuer":"Google / Coursera","year":"2023","credentialUrl":"https://coursera.org","badge":"Google Certified Data Analyst"},{"id":"cert-powerbi","name":{"fr":"Microsoft Power BI Data Analyst — Modélisation, Mesures DAX & Business Intelligence (PL-300)","en":"Microsoft Power BI Data Analyst — DAX Modeling & BI (PL-300)"},"issuer":"Microsoft / Coursera","year":"2023","credentialUrl":"https://coursera.org","badge":"Power BI Analyst"},{"id":"cert-qgis","name":{"fr":"Map Fast with QGIS — Système d’Information Géographique (SIG)","en":"Map Fast with QGIS — Geographic Information System (GIS)"},"issuer":"Coursera Project Network","year":"2023","credentialUrl":"https://coursera.org","badge":"GIS Specialist"},{"id":"cert-kobo","name":{"fr":"Complete KoboToolbox Training Course — Collecte Mobile Avancée, XLSForm & Enquêtes Terrain","en":"Complete KoboToolbox Training Course — Advanced Mobile Data Collection & XLSForm"},"issuer":"Udemy","year":"2023","credentialUrl":"https://udemy.com","badge":"KoboToolbox Expert"},{"id":"cert-google-ai","name":{"fr":"Google AI — Spécialisation Intelligence Artificielle & Prompting","en":"Google AI — Artificial Intelligence & Prompting Specialization"},"issuer":"Google / Coursera","year":"2024","credentialUrl":"https://coursera.org","badge":"Google AI Specialist"},{"id":"cert-excel","name":{"fr":"Excel Avancé pour l'Analyse des Données — Modélisation, TCD & Fonctions Complexes","en":"Advanced Excel for Data Analysis — Modeling, Pivot Tables & Complex Functions"},"issuer":"Horizon Services Consulting, Goma (RDC)","year":"2022","credentialUrl":"#","badge":"Formation Certifiante sur Site (Goma)"},{"id":"cert-web","name":{"fr":"Responsive Web Design — Développement Web, Architecture & Interfaces Réactives","en":"Responsive Web Design — Web Architecture & Responsive UIs"},"issuer":"freeCodeCamp","year":"2022","credentialUrl":"https://freecodecamp.org","badge":"Web Design Developer"}],"references":[{"id":"ref-1","name":"Kitoko Bruno","role":{"fr":"Directeur Pays","en":"Country Director"},"organization":"LM International","email":"kitoko.bruno@lminternational.org","phone":"+243 995 462 548"},{"id":"ref-2","name":"Joseph Baderha Kahunga","role":{"fr":"Branch Manager Sud-Kivu","en":"South Kivu Branch Manager"},"organization":"Verditra SARLU","email":"joseph@egov-africa.org","phone":"+243 995 462 548"},{"id":"ref-3","name":"Chimène Fatuma wa Saidi","role":{"fr":"Directrice des Opérations","en":"Operations Director"},"organization":"Verditra SARLU","email":"chimene@egov-africa.org","phone":"+243 993 820 585"},{"id":"ref-4","name":"Jacques Musumba","role":{"fr":"Coordonnateur Général","en":"General Coordinator"},"organization":"eGov Africa","email":"jacques@egov-africa.org","phone":"+243 992 641 674"}],"experience":[{"id":"exp-egov","role":{"fr":"Co-fondateur & Spécialiste des Données Humanitaires & MEAL","en":"Co-Founder & Humanitarian Data / MEAL Specialist"},"company":"eGov Africa (Organisation Non Gouvernementale)","period":"2024 — Présent","location":{"fr":"Goma, RDC","en":"Goma, DRC"},"description":{"fr":"Architecture et déploiement de solutions numériques de gestion de l'information pour le secteur de la santé publique et les acteurs d'urgence en RDC, avec l'appui de partenaires internationaux tels que LM International.","en":"Architecting and deploying digital information management and MEAL solutions for public health and emergency responders in the DRC, supported by international partners like LM International."},"responsibilities":{"fr":["Conception de formulaires XLSForm complexes sur KoboToolbox pour la collecte mobile (consultations prénatales CPN, suivi vaccinal, monitoring des violences basées sur le genre - VBG).","Consolidation, contrôle qualité et traitement analytique de jeux de données massifs pour alimenter les rapports opérationnels, bulletins d'alerte et dashboards partenaires.","Renforcement des capacités et encadrement technique des équipes et partenaires de terrain sur l'utilisation des solutions numériques et la protection des données sensibles.","Mise en place de mécanismes rigoureux de validation et d'intégrité, assurant une disponibilité continue d'indicateurs fiables pour la prise de décision humanitaire.","Coordination stratégique avec les clusters humanitaires, les divisions provinciales de la santé et les parties prenantes institutionnelles."],"en":["Designed complex XLSForm surveys in KoboToolbox for mobile field collection (antenatal care ANC, immunization coverage, gender-based violence GBV monitoring).","Consolidated, cleaned, and analyzed large-scale field datasets to feed operational SitReps, early-warning bulletins, and partner dashboards.","Led technical capacity building for field personnel and partner teams on digital tools, data security, and sensitive data protection ethics.","Enforced rigorous validation and data integrity workflows ensuring continuous availability of reliable indicators for humanitarian decision-making.","Coordinated strategically with humanitarian clusters, provincial health divisions, and institutional stakeholders."]},"technologies":["KoboToolbox","XLSForm","Power BI","SQL","MEAL","Santé Publique","Gestion Axée Résultats"]},{"id":"exp-verditra","role":{"fr":"Assistant aux Opérations / ICT & GIS Officer","en":"Operations Assistant / ICT & GIS Officer"},"company":"Verditra SARLU (Société de Services Numériques & Ingénierie)","period":"Février 2022 — Janvier 2025","location":{"fr":"Ituri, Sud-Kivu, Kongo Central, RDC","en":"Ituri, South Kivu, Kongo Central, DRC"},"description":{"fr":"Coordination technique du déploiement de solutions de gouvernance électronique et de dématérialisation fiscale pour les régies provinciales (DGRNK, DGRPI, etc.).","en":"Technical coordination of electronic governance and tax digitization systems for provincial revenue collection agencies (DGRNK, DGRPI, etc.)."},"responsibilities":{"fr":["Expertise SIG sous QGIS : vectorisation, délimitation et calcul de superficie de plus de 10 000 parcelles et bâtis, couplés aux identifiants fiscaux et fonciers.","Conception et alimentation de tableaux de bord analytiques dynamiques sous Power BI, Tableau et Qlik Sense pour le suivi des recettes publiques par les gouvernements provinciaux.","Animation de sessions de formation et transfert de compétences auprès de plus de 100 agents et directeurs provinciaux.","Supervision des bases de données relationnelles, optimisation des procédures d’intégration (ETL) et support technique de proximité."],"en":["GIS geospatial engineering with QGIS: vectorized, delineated, and calculated area for 10,000+ land parcels and buildings linked to fiscal IDs.","Designed and maintained dynamic analytics dashboards in Power BI, Tableau, and Qlik Sense for provincial revenue tracking by governors.","Conducted training workshops and technology transfer sessions for 100+ provincial civil servants, agents, and department directors.","Supervised relational databases, optimized ETL integration scripts, and provided on-site technical user support."]},"technologies":["QGIS","Power BI","Tableau","Qlik Sense","MySQL","ETL","Gouvernance Publique"]},{"id":"exp-radiomaria","role":{"fr":"Technicien d'Antenne & Support Systèmes","en":"Broadcast Antenna Technician & Systems Support"},"company":"Radio Maria Bukavu (Réseau International de Radiodiffusion)","period":"2021 — 2022","location":{"fr":"Bukavu, Sud-Kivu, RDC","en":"Bukavu, South Kivu, DRC"},"description":{"fr":"Supervision technique des faisceaux hertziens d’émission et garantie de la continuité opérationnelle du signal de radiodiffusion.","en":"Technical supervision of broadcast microwave transmission links and operational continuity maintenance for international radio broadcasting."},"responsibilities":{"fr":["Supervision technique des faisceaux hertziens d’émission et garantie de la continuité opérationnelle du signal de radiodiffusion.","Maintenance préventive et curative du parc informatique, des consoles de mixage et des infrastructures réseau du studio.","Résolution rapide des incidents d’antenne et assistance technique aux équipes de production."],"en":["Ensured uninterrupted radio transmission signal continuity across broadcast microwave radio relay antennas.","Preventive and corrective hardware maintenance for computer workstations, audio mixing boards, and studio networks.","Rapid resolution of antenna anomalies and real-time technical support for audio production teams."]},"technologies":["Faisceaux Hertziens","Réseaux & Télécoms","Maintenance Matérielle & Systèmes"]}],"blog":[{"id":"blog-meal","title":{"fr":"Le Rôle Vital du MEAL et de la Gestion de l'Information dans les Réponses Humanitaires d'Urgence","en":"The Crucial Role of MEAL and Information Management in Humanitarian Emergency Response"},"slug":"meal-information-management-humanitarian","date":"2026-06-15","readTime":{"fr":"7 min de lecture","en":"7 min read"},"category":{"fr":"MEAL & Secteur Humanitaire","en":"MEAL & Humanitarian Sector"},"excerpt":{"fr":"Comment structurer des mécanismes de redevabilité (AAP), concevoir des indicateurs fiables sur KoboToolbox et piloter la prise de décision humanitaire fondée sur les preuves en RDC.","en":"How to structure accountability mechanisms (AAP), design robust survey indicators on KoboToolbox, and enable evidence-based humanitarian decision-making in the DRC."},"content":{"fr":"### L'Urgence d'une Décision Fondée sur les Preuves\n\nDans les contextes d'urgence et de déplacement de populations en République Démocratique du Congo, chaque heure compte. Déployer une aide humanitaire efficace ne peut reposer sur de simples intuitions : elle exige des données vérifiées, intègres et opportunes.\n\n#### 1. Concevoir des Formulaires KoboToolbox / XLSForm Inviolables\nUn bon système MEAL commence dès la conception du formulaire de collecte :\n- **Contraintes et calculs embarqués :** Éviter les erreurs de saisie sur le terrain (validation des âges, cohérence vaccinale, vérification croisée des coordonnées GPS).\n- **Logique conditionnelle (Skip Logic) :** Adapter le questionnaire à la situation spécifique du ménage sans alourdir le temps d'administration.\n- **Protection des données sensibles :** Appliquer des protocoles stricts de confidentialité lors de la collecte d'informations critiques (notamment sur les violences basées sur le genre - VBG).\n\n#### 2. La Redevabilité envers les Populations Affectées (AAP)\nLe système MEAL ne sert pas uniquement à satisfaire les exigences des bailleurs de fonds. Il constitue le canal privilégié par lequel les bénéficiaires expriment leurs besoins réels, leurs réclamations et leurs retours d'expérience. En intégrant des mécanismes continus de rétroaction, les acteurs humanitaires adaptent leurs interventions en temps réel.\n\n#### Conclusion\nAssocier une collecte mobile sécurisée à des tableaux de bord Power BI d'alerte précoce permet aux clusters et coordinateurs de sauver des vies en orientant les ressources là où les besoins sont les plus criants.","en":"### The Urgency of Evidence-Based Humanitarian Decisions\n\nIn acute emergency settings and displacement crises in the Democratic Republic of the Congo, every minute matters. Directing humanitarian assistance effectively cannot rely on guesswork: it demands verified, intact, and timely field data.\n\n#### 1. Designing Resilient KoboToolbox / XLSForm Questionnaires\nAn effective MEAL pipeline begins at the questionnaire design phase:\n- **Embedded validation & constraints:** Preventing field surveyor typos (age plausibility, vaccination consistency, GPS coordinate checks).\n- **Dynamic skip logic:** Tailoring questions dynamically based on household conditions without lengthening interview fatigue.\n- **Sensitive data protection:** Enforcing strict confidentiality protocols when capturing sensitive protection indicators (especially Gender-Based Violence - GBV).\n\n#### 2. Accountability to Affected Populations (AAP)\nA MEAL framework does not exist merely to satisfy donor compliance. It serves as the primary channel through which affected communities voice complaints, feedback, and emerging vulnerabilities. By embedding continuous feedback loops, humanitarian responders pivot resources dynamically.\n\n#### Conclusion\nCoupling secure mobile collection with executive early-warning Power BI dashboards empowers humanitarian clusters to direct lifesaving interventions exactly where vulnerability is highest."},"tags":["MEAL","KoboToolbox","XLSForm","Humanitaire RDC","Protection des Données"],"author":"Iragi Mihigo Roland"},{"id":"blog-gis","title":{"fr":"QGIS et Analyse Géospatiale pour la Gouvernance Foncière et la Fiscalité Locale","en":"QGIS & Spatial Analytics for Land Cadastre Governance and Local Taxation"},"slug":"qgis-spatial-analytics-cadastre-governance","date":"2026-04-10","readTime":{"fr":"6 min de lecture","en":"6 min read"},"category":{"fr":"SIG & Cartographie Géospatiale","en":"GIS & Geospatial Analysis"},"excerpt":{"fr":"Retour d'expérience sur la vectorisation et le géoréférencement de plus de 10 000 parcelles sous QGIS pour moderniser les régies financières provinciales (DGRNK, DGRPI).","en":"Lessons learned vectorizing and georeferencing over 10,000 land parcels in QGIS to modernize provincial revenue collection in the DRC."},"content":{"fr":"### Le Défi de la Dématérialisation Fiscale et Foncière\n\nDans de nombreuses provinces de la RDC, l'identification fiscale des contribuables fonciers souffrait de registres physiques incomplets ou obsolètes. L'introduction du Système d'Information Géographique (SIG) a révolutionné la transparence et l'efficacité de la collecte des recettes publiques.\n\n#### 1. Méthodologie de Vectorisation Haute Précision sous QGIS\n- **Orthophotos et imagerie satellitaire :** Calage précis des limites parcellaires et des bâtis.\n- **Attribution d'identifiants uniques :** Liaison directe entre les polygones parcellaires et les numéros d'immatriculation fiscale des régies (DGRNK, DGRPI).\n- **Calculs géodésiques automatisés :** Détermination exacte des superficies pour la juste taxation selon les barèmes légaux provinciaux.\n\n#### 2. Croisement Spatial et Bases Relationnelles\nEn reliant les couches vectorielles SHP/GeoJSON à des bases de données relationnelles MySQL via des pipelines ETL, les régies peuvent visualiser instantanément :\n- Les zones géographiques à fort potentiel fiscal inexploré.\n- Le taux de recouvrement par quartier et par commune.\n- La distribution spatiale des activités économiques et des titres fonciers.\n\n#### Résultat\nUne amélioration mesurable des recettes provinciales, une réduction des litiges fonciers et une gouvernance publique renforcée par des cartes communicantes de haute qualité.","en":"### The Challenge of Modernizing Land Taxation\n\nAcross several DRC provinces, fiscal identification of landholders historically suffered from fragmented or outdated manual paper registries. Introducing modern Geographic Information Systems (GIS) transformed transparency and revenue mobilization.\n\n#### 1. High-Accuracy Vectorization Workflow in QGIS\n- **Orthophotos & high-resolution satellite imagery:** Accurate delineation of land parcels and building footprints.\n- **Unique identifier joins:** Direct foreign-key links between spatial polygons and provincial tax identification numbers (DGRNK, DGRPI).\n- **Automated geodetic area computation:** Exact area calculations for fair tax assessment based on provincial rate tiers.\n\n#### 2. Intersecting Spatial Layers with Relational Databases\nConnecting SHP/GeoJSON layers with MySQL databases through automated ETL pipelines gave provincial authorities instant spatial visibility into:\n- High-potential urban tax districts with low compliance.\n- Recovery rate heatmaps by neighborhood and municipality.\n- Spatial dispersion of economic activities and land titles.\n\n#### Impact\nA substantial surge in public revenues, reduction in boundary disputes, and strengthened governance powered by communicative thematic maps."},"tags":["QGIS","SIG","Cartographie","Gouvernance Foncière","DGRNK"],"author":"Iragi Mihigo Roland"},{"id":"blog-powerbi","title":{"fr":"Data Storytelling avec Power BI et DAX : Transformer des Millions de Lignes en Décisions Stratégiques","en":"Data Storytelling with Power BI and DAX: Turning Millions of Rows into Strategic Decisions"},"slug":"power-bi-dax-data-storytelling-decisions","date":"2026-02-28","readTime":{"fr":"5 min de lecture","en":"5 min read"},"category":{"fr":"Business Intelligence & Dataviz","en":"Business Intelligence & Dataviz"},"excerpt":{"fr":"Comment structurer des modèles de données relationnels performants, écrire des mesures DAX optimisées et concevoir des infographies qui captivent les décideurs.","en":"How to architect high-performance relational star schemas, write optimized DAX measures, and design executive dashboards that drive action."},"content":{"fr":"### Au-delà du Simple Graphique : Le Pouvoir du Data Storytelling\n\nCollecter des millions de points de données ne sert à rien si les décideurs ne peuvent pas en saisir le sens en moins de 5 secondes. En tant que Data Analyst, notre rôle est de traduire la complexité statistique en un récit visuel clair et orienté vers l'action.\n\n#### 1. Les Fondations : Modélisation en Étoile (Star Schema)\nAvant d'écrire la moindre formule DAX, la disposition des tables de faits et des tables de dimensions conditionne à la fois la rapidité du calcul et la fluidité de l'interface utilisateur. Un modèle dénormalisé correctement permet à Power Query et au moteur VertiPaq de répondre instantanément.\n\n#### 2. La Puissance des Mesures DAX\n- Utilisation de `CALCULATE` avec modificateurs de filtre stricts pour les comparaisons annuelles (Year-over-Year).\n- Mesures dynamiques de prévision budgétaire et suivi de réalisation des indicateurs de performance (KPIs).\n\n#### 3. Principes Visuels pour Dirigeants\n- Règle des 3 secondes : l'information clé (KPI global) doit sauter aux yeux immédiatement en haut à gauche.\n- Palette sobre et contrastée pour mettre en évidence les alertes sans surcharger l'attention.\n- Filtres synchronisés pour permettre aux directeurs de zoomer du niveau provincial au niveau opérationnel en un clic.","en":"### Beyond Charts: The Power of Executive Data Storytelling\n\nGathering millions of data points is meaningless if decision-makers cannot grasp the insight within 5 seconds. As a Data Analyst, our duty is translating statistical complexity into a clean, compelling narrative that prompts action.\n\n#### 1. The Core Foundation: Relational Star Schema\nBefore writing any DAX measure, structuring clean fact and dimension tables dictates both calculation performance and UX responsiveness. A disciplined star schema unlocks instant memory evaluation in the VertiPaq engine.\n\n#### 2. Advanced DAX Calculations\n- Leveraging `CALCULATE` with clean filter context overrides for Year-over-Year (YoY) variances.\n- Dynamic performance tracking against planned humanitarian and fiscal KPI milestones.\n\n#### 3. Visual Ergonomics for Decision-Makers\n- The 3-second rule: the top-line KPI must be immediately legible at the upper left.\n- Restrained, purposeful color palettes directing attention directly to outliers and alerts.\n- Synchronized drill-downs letting executives transition from macro provincial trends down to field operational units in one click."},"tags":["Power BI","DAX","Business Intelligence","Dataviz","KPIs"],"author":"Iragi Mihigo Roland"}]};
+    let currentLang = "fr";
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'fr' ? 'en' : 'fr';
+      const isFr = currentLang === 'fr';
+      document.documentElement.lang = currentLang;
+
+      // Update button
+      document.getElementById('lang-toggle-btn').innerText = isFr ? 'EN 🇬🇧' : 'FR 🇫🇷';
+
+      // Update titles
+      document.getElementById('doc-title').innerText = DATA.personal.name + ' — ' + DATA.personal.title[currentLang];
+      document.getElementById('doc-desc').content = DATA.personal.bio[currentLang];
+      document.getElementById('hero-title').innerText = DATA.personal.title[currentLang];
+      document.getElementById('hero-bio').innerText = DATA.personal.bio[currentLang];
+      document.getElementById('hero-badge').innerText = isFr ? '● Disponible pour Missions Data Analyst & MEAL' : '● Available for Data Analyst & MEAL Roles';
+      document.getElementById('btn-contact').innerText = isFr ? 'Me Contacter' : 'Get in Touch';
+      document.getElementById('btn-projects').innerText = isFr ? 'Voir les Projets' : 'View Projects';
+      document.getElementById('btn-copy-email').innerText = '📋 ' + (isFr ? 'Copier Email' : 'Copy Email');
+      
+      // About
+      document.getElementById('about-heading').innerText = isFr ? 'Profil Professionnel' : 'Professional Profile';
+      document.getElementById('about-subheading').innerText = isFr ? 'Expertise en gestion de l\'information, SIG et suivi-évaluation en RDC' : 'Expertise in information management, GIS and MEAL in DRC';
+      document.getElementById('about-text').innerText = DATA.personal.about[currentLang];
+
+      // Skills
+      document.getElementById('skills-heading').innerText = isFr ? 'Compétences Techniques & MEAL' : 'Technical Skills & MEAL';
+      document.getElementById('skills-subheading').innerText = isFr ? 'KoboToolbox, Power BI, QGIS, SQL/BigQuery, analyses sanitaires et humanitaires' : 'KoboToolbox, Power BI, QGIS, SQL/BigQuery, health and humanitarian analytics';
+
+      // Projects
+      document.getElementById('projects-heading').innerText = isFr ? 'Projets Data & Portfolio Analytique' : 'Data Projects & Portfolio';
+      document.getElementById('projects-subheading').innerText = isFr ? 'Études de cas concrètes, systèmes MEAL et cartographies géospatiales' : 'Real-world case studies, MEAL systems, and geospatial mapping';
+      renderProjects();
+
+      // Experience & Education & Certs & Refs & Blog
+      document.getElementById('exp-heading').innerText = isFr ? 'Expérience Professionnelle' : 'Professional Experience';
+      document.getElementById('edu-heading').innerText = isFr ? 'Formation Académique' : 'Academic Education';
+      document.getElementById('certs-heading').innerText = isFr ? 'Certifications Professionnelles (7)' : 'Professional Certifications (7)';
+      document.getElementById('refs-heading').innerText = isFr ? 'Références Professionnelles' : 'Professional References';
+      document.getElementById('blog-heading').innerText = isFr ? 'Articles & Publications Techniques' : 'Technical Articles & Publications';
+      document.getElementById('contact-heading').innerText = isFr ? 'Prendre Contact' : 'Get in Touch';
+      document.getElementById('contact-subheading').innerText = isFr ? 'Disponible pour des postes et missions en Analyse de Données, SIG et MEAL en RDC et à l\'international.' : 'Available for Data Analyst, GIS, and MEAL positions and missions in DRC and globally';
+      document.getElementById('btn-send-email').innerText = isFr ? 'Envoyer un E-mail' : 'Send an Email';
+      document.getElementById('footer-text').innerText = '© ' + new Date().getFullYear() + ' ' + DATA.personal.name + '. ' + (isFr ? 'Portfolio Data Analyst, SIG & MEAL autonome en HTML, CSS et JavaScript.' : 'Autonomous Data Analyst, GIS & MEAL portfolio built with HTML, CSS, and JavaScript.');
+
+      renderTimeline();
+      renderCerts();
+      renderRefs();
+      renderBlog();
+    }
+
+    function renderProjects() {
+      const container = document.getElementById('projects-container');
+      const isFr = currentLang === 'fr';
+      container.innerHTML = DATA.projects.map(proj => `
+        <div class="project-card">
+          <img class="project-img" src="${proj.image}" alt="${proj.title[currentLang]}" />
+          <div class="project-body">
+            <h3>${proj.title[currentLang]}</h3>
+            <p>${proj.shortDesc[currentLang]}</p>
+            <div class="tags">
+              ${proj.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+            </div>
+            ${proj.metrics ? `<div style="font-size: 0.8rem; color: #4ade80; margin-bottom: 12px;">📈 ${proj.metrics[currentLang]}</div>` : ''}
+            <div style="display: flex; gap: 10px; margin-top: auto;">
+              ${proj.kaggleUrl ? `<a href="${proj.kaggleUrl}" target="_blank" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.8rem;">Kaggle</a>` : ''}
+              ${proj.githubUrl ? `<a href="${proj.githubUrl}" target="_blank" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.8rem;">GitHub</a>` : ''}
+              ${proj.liveUrl ? `<a href="${proj.liveUrl}" target="_blank" class="btn btn-primary" style="padding: 6px 12px; font-size: 0.8rem;">${isFr ? 'Accéder' : 'View'}</a>` : ''}
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderTimeline() {
+      document.getElementById('exp-container').innerHTML = DATA.experience.map(exp => `
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">${exp.period}</div>
+          <div class="timeline-title">${exp.role[currentLang]}</div>
+          <div class="timeline-place">${exp.company} — ${exp.location[currentLang]}</div>
+          <div class="timeline-desc">${exp.description[currentLang]}</div>
+        </div>
+      `).join('');
+
+      document.getElementById('edu-container').innerHTML = DATA.education.map(edu => `
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">${edu.period}</div>
+          <div class="timeline-title">${edu.degree[currentLang]}</div>
+          <div class="timeline-place">${edu.institution[currentLang]} — ${edu.location[currentLang]}</div>
+          <div class="timeline-desc">${edu.description[currentLang]}</div>
+        </div>
+      `).join('');
+    }
+
+    function renderCerts() {
+      const isFr = currentLang === 'fr';
+      document.getElementById('certs-container').innerHTML = (DATA.certifications || []).map(cert => `
+        <div class="cert-card">
+          <span class="cert-badge">${cert.badge || cert.issuer}</span>
+          <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 6px;">${cert.name[currentLang]}</h4>
+          <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 8px;">${cert.issuer} • ${cert.year || ''}</div>
+          ${cert.credentialUrl && cert.credentialUrl !== '#' ? `<a href="${cert.credentialUrl}" target="_blank" style="color: #60a5fa; font-size: 0.75rem; font-weight: 600;">↗ ${isFr ? 'Vérifier' : 'Verify'}</a>` : ''}
+        </div>
+      `).join('');
+    }
+
+    function renderRefs() {
+      document.getElementById('refs-container').innerHTML = (DATA.references || []).map(ref => `
+        <div class="ref-card">
+          <h4 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px;">${ref.name}</h4>
+          <div style="color: #60a5fa; font-size: 0.85rem; font-weight: 600; margin-bottom: 2px;">${ref.role[currentLang]}</div>
+          <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 10px;">${ref.organization}</div>
+          <div style="font-size: 0.8rem; color: #d1d5db;">✉️ <a href="mailto:${ref.email}">${ref.email}</a></div>
+          <div style="font-size: 0.8rem; color: #d1d5db;">📞 <a href="tel:${ref.phone}">${ref.phone}</a></div>
+        </div>
+      `).join('');
+    }
+
+    function renderBlog() {
+      document.getElementById('blog-container').innerHTML = DATA.blog.map(b => `
+        <div class="blog-card">
+          <div class="blog-meta">
+            <span>${b.category[currentLang]}</span>
+            <span>${b.readTime[currentLang]}</span>
+          </div>
+          <h3>${b.title[currentLang]}</h3>
+          <p>${b.excerpt[currentLang]}</p>
+        </div>
+      `).join('');
+    }
+
+    function copyEmail() {
+      const email = DATA.personal.contact.email;
+      navigator.clipboard.writeText(email).then(() => {
+        alert(currentLang === 'fr' ? 'Email copié dans le presse-papier : ' + email : 'Email copied to clipboard: ' + email);
+      });
+    }
+
+    function downloadVCard() {
+      const p = DATA.personal;
+      const vcard = "BEGIN:VCARD\nVERSION:3.0\nFN:" + p.name + "\nTITLE:" + p.title.en + "\nEMAIL:" + p.contact.email + "\nTEL:" + p.contact.phone + "\nADR:;;;" + p.contact.location + ";;;\nEND:VCARD";
+      const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = p.name.replace(/\s+/g, '_') + '_contact.vcf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
+</body>
+</html>

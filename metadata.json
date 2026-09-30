@@ -1,0 +1,6 @@
+{
+  "name": "Bilingual Portfolio & Resume Extractor",
+  "description": "Interactive bilingual developer portfolio (EN/FR) with project showcases, skills matrix, education timeline, technical blog, and automated AI resume information extraction.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
